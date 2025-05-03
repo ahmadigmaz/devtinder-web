@@ -22,5 +22,14 @@ route/profile - profile page
 
 now make a foorm and use the useState hook and try to handle the login API.
 
-
 to make API call in your handler function , we will be using Axios package
+
+install redux toolkit
+read the documentation - https://redux-toolkit.js.org/introduction/getting-started
+for now just digest Redux, we will understna dall redux in namaste react course. for noe just folloe the below steps for redux setup.
+
+1- install the redux toolkit
+2- install the react redux
+3- create the appStore(configure the store)
+4-  provide the store to the application by using provide functon meaning rapp all your app.js code inside the provide
+5 - create the slice and export the things and add reducer to the store.
