@@ -27,6 +27,14 @@ const Login = () => {
         }
    }
 
+   const callSignUpPage = async ()=>{
+        try{
+            return navigate("/signup");
+        }catch(err){
+            console.error(err);
+        }
+   }
+
   return (
     <div className='flex justify-center my-10'>
         <div className="card card-dash bg-base-300 w-96">
@@ -55,6 +63,12 @@ const Login = () => {
                 <div className="card-actions justify-center m-4">
                   <button className="btn btn-primary " onClick={handlerLogin}>Login</button>
                 </div>
+                <div>
+                    <button className="text-white-600 hover:text-blue-600 transition-colors duration-100" onClick={callSignUpPage}>
+                        Create Account
+                    </button>
+                </div>
+
             </div>
         </div>
     </div>    
