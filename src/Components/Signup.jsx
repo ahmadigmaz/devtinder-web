@@ -13,7 +13,7 @@ const Signup = () => {
     const navigate = useNavigate();
 
     const handlerSignup =  async()=> {
-        const res = await axios.post( BASE_URL +"signup",{ 
+        const res = await axios.post( BASE_URL +"/signup",{ 
             firstName,
             lastName,
             emailId,

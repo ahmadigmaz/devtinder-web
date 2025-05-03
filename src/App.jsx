@@ -2,10 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Body from "./Components/Body"
 import Login from "./Components/Login"
 import Profile from "./Components/Profile"
-import { Provider } from "react-redux"
+import { Provider, useDispatch } from "react-redux"
 import appStore from "./Utils/appStore"
 import Feed from "./Components/Feed"
 import Signup from "./Components/signup"
+
 
 function App() {
 
