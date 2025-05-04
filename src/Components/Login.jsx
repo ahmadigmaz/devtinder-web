@@ -11,6 +11,7 @@ const Login = () => {
 
    const [emailId,setEmailId] = useState("deepali@gmail.com");
    const [password,setPassword] = useState("Deepali@123");
+   const [error, setError] = useState("");
    const dispatch = useDispatch();
    const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ const Login = () => {
             dispatch(addUser(res.data));
            return navigate("/");
         }catch(err){
+            setError(err?.response?.data || "something went Wrong")
             console.error(err);
         }
    }
@@ -59,6 +61,7 @@ const Login = () => {
                         onChange={(e)=>setPassword(e.target.value)}
                         />
                     </label>
+                    <p className='text-red-500'>{error}</p>
                 </div>
                 <div className="card-actions justify-center m-4">
                   <button className="btn btn-primary " onClick={handlerLogin}>Login</button>
