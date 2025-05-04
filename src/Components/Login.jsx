@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../Utils/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../Utils/constants';
@@ -15,9 +15,15 @@ const Login = () => {
    const dispatch = useDispatch();
    const navigate = useNavigate();
 
+
+   const userData = useSelector((store)=>store.user)
+
+   if(userData?.data){
+     return navigate("/");
+   }
    const handlerLogin = async ()=>{
         try{
-            const res = await axios.post( BASE_URL + "/login",{ 
+            const res = await axios.post(BASE_URL + "/login",{ 
                 emailId,
                 password
             },{ withCredentials: true })
