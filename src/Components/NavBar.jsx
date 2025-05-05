@@ -50,6 +50,8 @@ const NavBar = () => {
                  <Link to = "/profile" className="justify-between">Profile</Link> 
               </li>
               <li><Link to="/connections">Connections</Link></li>
+              <li><Link to="/requests">Requests</Link></li>
+
               <li><a onClick={handlerLogout}>Logout</a></li>
             </ul>
           </div>

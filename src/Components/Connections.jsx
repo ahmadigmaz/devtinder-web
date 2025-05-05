@@ -27,14 +27,12 @@ const Connections =  () => {
    if(connections.length===0) return  <h1 className='text-bold text-2xl'>Connections</h1>;
 
   return (
-    <div className='text-center my-10'>
-        <h1 className='text-bold text-2xl'>Connections</h1>
-        
+    <div className='flex justify-center my-10 '>
          {connections.map((connection) =>{
-            const {firstName, lastName, age, gender, about, photoUrl} = connection;
+            const {_id, firstName, lastName, age, gender, about, photoUrl} = connection;
          
                 return (
-                    <div className='flex justify-center my-5'>
+                    <div key = {_id} className='flex justify-center my-5 mx-10'>
                         <div className=" card bg-base-300 w-96 shadow-sm">
                             <div className="card-body">
                                 <figure>
