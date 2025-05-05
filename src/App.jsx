@@ -6,6 +6,8 @@ import { Provider, useDispatch } from "react-redux"
 import appStore from "./Utils/appStore"
 import Feed from "./Components/Feed"
 import Signup from "./Components/signup"
+import Connections from "./Components/Connections"
+import Requests from "./Components/Requests"
 
 
 
@@ -21,6 +23,8 @@ function App() {
               <Route path="/login" element={<Login/>}/>
               <Route path="/profile" element={<Profile/>}/>
               <Route path="/signup" element={<Signup/>}/>
+              <Route path="/connections" element={<Connections/>}/>
+              <Route path="/requests" element={<Requests/>}/>
             </Route>
           </Routes>
         </BrowserRouter> 
