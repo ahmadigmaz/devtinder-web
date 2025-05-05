@@ -27,7 +27,7 @@ const Connections =  () => {
    if(connections.length===0) return  <h1 className='text-bold text-2xl'>Connections</h1>;
 
   return (
-    <div className='flex justify-center my-10 '>
+    <div className=' justify-center my-10 '>
          {connections.map((connection) =>{
             const {_id, firstName, lastName, age, gender, about, photoUrl} = connection;
          

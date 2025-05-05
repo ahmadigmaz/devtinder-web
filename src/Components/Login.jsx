@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../Utils/userSlice';
 import { useNavigate } from 'react-router-dom';
@@ -16,11 +16,14 @@ const Login = () => {
    const navigate = useNavigate();
 
 
-   const userData = useSelector((store)=>store.user)
+        const userData = useSelector((store)=>store.user)
 
-   if(userData?.data){
-     return navigate("/");
-   }
+        useEffect(() => {
+        if (userData?.data) {
+            navigate("/");
+        }
+        }, [userData, navigate]);
+
    const handlerLogin = async ()=>{
         try{
             const res = await axios.post(BASE_URL + "/login",{ 
