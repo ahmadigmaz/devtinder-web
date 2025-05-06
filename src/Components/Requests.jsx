@@ -22,7 +22,7 @@ const Requests = () => {
     const fetchRequests = async ()=>{
         try{
             const res = await axios.get(BASE_URL + "/user/requests/received", {withCredentials:true});
-            dispatch(addRequest(res.data?.data))
+            dispatch(addRequest(res?.data?.data))
         }catch(err){
             console.error(err.message);
         }
@@ -37,9 +37,9 @@ const Requests = () => {
 
   return (
     <div className=' justify-center my-10 '>
-    {allRequests.map((requests) =>{
-       const {_id, firstName, lastName, age, gender, about, photoUrl} = requests.fromUserId;
-       const requestId = requests._id;
+    {allRequests.map((request) =>{
+       const {_id, firstName, lastName, age, gender, about, photoUrl} = request?.fromUserId;
+       const requestId = request._id;
     
            return (
                <div key = {_id} className='flex justify-center my-5 mx-10'>

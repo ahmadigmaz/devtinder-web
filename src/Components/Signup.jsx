@@ -38,6 +38,7 @@ const Signup = () => {
         return navigate("/login");
     }
 
+
   return (
      <>
         <div className='flex justify-center my-3'>
@@ -126,7 +127,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <button className="text-white-600 hover:text-blue-600 transition-colors duration-100" onClick={callLoginApi} >
-                            Already Have Account
+                            Already Have An Account
                         </button>
                    </div>
 
