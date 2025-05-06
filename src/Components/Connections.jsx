@@ -15,7 +15,7 @@ const Connections =  () => {
                 });
                 dispatch(addConnection(res.data?.data));
         }catch(err){
-            console.error("Eroor: " + err.message);
+            console.error("Error: " + err.message);
         }
     };
 
@@ -24,7 +24,7 @@ const Connections =  () => {
    },[]) 
 
    if(!connections) return;
-   if(connections.length===0) return  <h1 className='text-bold text-2xl'>Connections</h1>;
+   if(connections.length===0) return  <h1 className='text-bold text-2xl'>No Connections Found</h1>;
 
   return (
     <div className=' justify-center my-10 '>
