@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { BASE_URL } from '../Utils/constants';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../Utils/userSlice';
 
 
 const Signup = () => {
@@ -15,6 +17,7 @@ const Signup = () => {
     const [photoUrl, setPhotoUrl] = useState("");
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handlerSignup =  async()=> {
            try{
@@ -28,7 +31,8 @@ const Signup = () => {
                 age,
                 photoUrl
             },{ withCredentials: true })
-            return navigate("/login");
+            dispatch(addUser(res?.data));
+            return navigate("/");
 
            }catch(err){
              console.error(err.message);

@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../Utils/constants';
 import axios from 'axios';
 import { removeUser } from '../Utils/userSlice';
-import EditProfile from './EditProfile';
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -29,7 +28,7 @@ const NavBar = () => {
   return (
     <div className="navbar bg-base-300 shadow-sm">
       <div className="flex-1">
-        <Link to = "/" className="btn btn-ghost text-xl">DevTinder</Link>
+        <Link to = "/" className="btn btn-ghost text-xl">❤️‍🔥DevTinder❤️‍🔥</Link>
       </div>
       
       {firstName && (
