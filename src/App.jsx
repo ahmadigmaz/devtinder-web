@@ -5,7 +5,7 @@ import Profile from "./Components/Profile"
 import { Provider, useDispatch } from "react-redux"
 import appStore from "./Utils/appStore"
 import Feed from "./Components/Feed"
-import Signup from "./Components/signup"
+import Signup from "./Components/Signup"
 import Connections from "./Components/Connections"
 import Requests from "./Components/Requests"
 
