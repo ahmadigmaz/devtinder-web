@@ -3,7 +3,7 @@ import { BASE_URL } from '../Utils/constants'
 import { useDispatch, useSelector } from 'react-redux'
 import { addFeed } from '../Utils/feedSlice';
 import axios from 'axios';
-import UserCard from './userCard';
+import UserCard from './UserCard';
 
 
 const Feed = () => {
