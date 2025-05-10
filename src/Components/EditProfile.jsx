@@ -8,7 +8,7 @@ import { addUser } from '../Utils/userSlice';
 const EditProfile = ({user}) => {
     const [firstName, setFirstName] = useState(user?.firstName || "");
     const [lastName, setLastName] = useState(user?.lastName || "");
-    const [photoUrl, setPhotoUrl] = useState(user?.photoUrl || "");
+    const [photoUrl, setPhotoUrl] = useState(user?.photoUrl);
     const [age, setAge] = useState(user?.age || "");
     const [gender, setGender] = useState(user?.gender || "");
     const [about, setAbout] = useState(user?.about || "");
@@ -117,14 +117,17 @@ const EditProfile = ({user}) => {
             </div>
        </div>  
        <div className='flex'>
-        <UserCard user={{firstName,lastName,photoUrl,age,gender,about}}/>
+        <UserCard user={{firstName,lastName,photoUrl,age,gender,about}} showButtons = {false}/>
        </div>
-    </div>  
-        {showToast && <div className="toast toast-top toast-center">
-            <div className="alert alert-success">
-                <span>Profile Updated successfully.</span>
-            </div>
-       </div>}
+     </div>  
+        {showToast && (
+             <div className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50">
+                <div className="alert alert-success shadow-lg">
+                <span>Profile updated successfully.</span>
+                </div>
+             </div>
+        )}
+
    </> 
     )
   
