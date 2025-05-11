@@ -8,6 +8,7 @@ import Feed from "./Components/Feed"
 import Signup from "./Components/Signup"
 import Connections from "./Components/Connections"
 import Requests from "./Components/Requests"
+import Chat from "./Components/Chat"
 
 
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/signup" element={<Signup/>}/>
               <Route path="/connections" element={<Connections/>}/>
               <Route path="/requests" element={<Requests/>}/>
+              <Route path="/chat/:targetUserId" element={<Chat/>}/>
             </Route>
           </Routes>
         </BrowserRouter> 

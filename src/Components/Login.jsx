@@ -63,7 +63,7 @@ const Login = () => {
                     </label>
                     <label className="form-control w-full max-w-xs">
                         <input
-                        type="text"
+                        type="password"
                         value={password}
                         placeholder="Password"
                         className="input input-bordered w-full max-w-xs"

@@ -3,11 +3,13 @@ import { BASE_URL } from '../Utils/constants';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { addConnection } from '../Utils/connectionSlice';
+import { Link } from 'react-router-dom';
 
 const Connections =  () => {
     const connections = useSelector((store)=>store.connection);
     const dispatch  = useDispatch();
     const fetchConnections = async () =>{
+
         try{
             const res = await axios.get(BASE_URL + "/user/connections",
                 {withCredentials: true,
@@ -43,6 +45,9 @@ const Connections =  () => {
                                 <h1 className="card-title">{firstName + " "  + lastName}</h1>
                                 {age && gender && <h4 className='flex'>{age + " " + gender}</h4>}
                                 <p>{about}</p>
+                                <div className='flex justify-end'>
+                                    <Link to={`/chat/${_id}`}><button className="flex btn btn-dash btn-accent">Chat</button></Link>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -20,17 +20,10 @@ const Signup = () => {
     const dispatch = useDispatch();
 
     const handlerSignup =  async()=> {
+        const dataToSend = {firstName, lastName,emailId, password, gender,about, age };
+        if(photoUrl && photoUrl.length !== 0) dataToSend.photoUrl = photoUrl;
            try{
-            const res = await axios.post( BASE_URL +"/signup",{ 
-                firstName,
-                lastName,
-                emailId,
-                password,
-                gender,
-                about,
-                age,
-                photoUrl
-            },{ withCredentials: true })
+            const res = await axios.post( BASE_URL +"/signup",dataToSend,{ withCredentials: true })
             dispatch(addUser(res?.data));
             return navigate("/");
 
