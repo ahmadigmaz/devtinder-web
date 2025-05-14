@@ -45,6 +45,11 @@ const Login = () => {
             console.error(err);
         }
    }
+    const handleKeyDown = (e) =>{
+        if(e.key === "Enter"){
+             handlerLogin();
+        }
+    }
 
   return (
     <div className='flex justify-center my-10'>
@@ -59,6 +64,7 @@ const Login = () => {
                         placeholder="Email Id"
                         className="input input-bordered w-full max-w-xs"
                         onChange={(e)=>setEmailId(e.target.value)}
+                        onKeyDown={handleKeyDown}
                         />
                     </label>
                     <label className="form-control w-full max-w-xs">
@@ -68,6 +74,7 @@ const Login = () => {
                         placeholder="Password"
                         className="input input-bordered w-full max-w-xs"
                         onChange={(e)=>setPassword(e.target.value)}
+                        onKeyDown={handleKeyDown}
                         />
                     </label>
                     <p className='text-red-500'>{error}</p>
